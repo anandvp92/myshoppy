@@ -8,16 +8,22 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login',(req,res,next)=>{
-  res.render('login',{title:"login page",admin:true,logo})
+  res.render('login',{title:"login page",admin:true,logo});
 })
 
 router.post('/login',(req,res,next)=>{
-  console.log(req.body)
-  res.send('Sucess')
+  console.log(req.body);
+  res.send('Sucess');
 })
 
 router.get('/signup',(req,res,next)=>{
-  res.render('signup',{title:"Signup page",admin:true,logo})
+  res.render('signup',{title:"Signup page",admin:true,logo});
+})
+
+
+router.post('/signup',(req,res,next)=>{
+  console.log(req.body);
+  res.send("Sucess");
 })
 
 
