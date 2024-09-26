@@ -1,9 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    './views/**/*.hbs',  // Add paths to your Handlebars templates
+    './public/**/*.js',  // Add paths to any JavaScript files
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
 }
-

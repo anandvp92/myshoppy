@@ -19,7 +19,11 @@ app.engine('hbs',hbs.engine(
   extname:'hbs',
   defaultLayout:'layout',
   layoutsDir:__dirname +'/views/layout/',
-  partialsDir:__dirname +'/views/partials/'
+  partialsDir:__dirname +'/views/partials/',
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true, // Allows access to prototype properties
+    allowProtoMethodsByDefault: true,   // Allows access to prototype methods
+  },
 }
 ));
 
