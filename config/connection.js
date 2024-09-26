@@ -1,17 +1,15 @@
-const { MongoClient } = require("mongodb");
+const mongoose = require('mongoose')
 
-const url = "mongodb://localhost:27017";
-const client = new MongoClient(url);
 
-const dbName = "Shopping";
 
-const main = async () => {
-  await client.connect();
-  console.log("Db is connected");
 
-  const db = client.db(dbName);
-  const collection = db.collection("Users");
-  return "Done.";
-};
+let url = "mongodb://127.0.0.1:27017/test"
 
-main().then(console.log).catch(console.error).finally(client.close());
+let db = async()=>{
+  await mongoose.connect(url);
+  const db = mongoose.connection;
+  db.once('open',()=>{
+    console.log("connected");
+  })
+}
+
